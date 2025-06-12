@@ -1,0 +1,41 @@
+body {
+  margin: 0;
+  background-image: url('images/background.webp');
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.container {
+  min-height: 100vh;
+  background-color: #fff;
+  box-shadow: rgba(136, 165, 191, 0.48) 6px 2px 16px 0px,
+    rgba(255, 255, 255, 0.8) -6px -2px 16px 0px;
+}
+.task-area {
+  border: 1px solid lightgray;
+}
+.task-tabs {
+  position: relative;
+  display: flex;
+  /* flex-direction: row; */
+  border-bottom: 1px solid lightgray;
+}
+.task-tabs div {
+  padding: 1em;
+}
+.tab {
+  cursor: pointer;
+}
+#under-line {
+  left: 0px;
+  top: 52px;
+  width: 65px;
+  height: 4px;
+  background-color: hotpink;
+  position: absolute;
+  padding: 0px;
+}
+.task {
+  display: flex;
+  justify-content: space-between;
+  padding: 1em;
+}
