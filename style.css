@@ -39,3 +39,19 @@ body {
   justify-content: space-between;
   padding: 1em;
 }
+.fa-check {
+  color: limegreen;
+}
+
+.fa-trash {
+  color: red;
+}
+.fa-undo-alt {
+  color: lightslategray;
+}
+
+.task-done {
+  text-decoration: line-through;
+  background-color: lightgray;
+  transition: 0.5s;
+}
