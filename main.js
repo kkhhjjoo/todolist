@@ -43,15 +43,14 @@ function render() {
   list = [];
   if (mode === 'all') {
     list = taskList;
-  } else {
-    // else if(mode=== "ongoing" || mode==="done") 을 결국 else 로 치환할 수 있다.
+  } else if (mode === 'ongoing' || mode === 'done') {
     list = filterList;
   }
 
   for (let i = 0; i < list.length; i++) {
     if (list[i].isComplete) {
-      result += `<div class="task task-done" id="${list[i].id}">
-            <span>${list[i].content}</span>
+      result += `<div class="task" id="${list[i].id}">
+            <span class="task-done">${list[i].content}</span>
             <div class="button-box">
             <button onclick="toggleDone('${list[i].id}')"><i class="fas fa-undo-alt"></i></button>
             <button onclick="deleteTask('${list[i].id}')"><i class="fa fa-trash"></i></button>
@@ -101,12 +100,18 @@ function filter(e) {
 
   filterList = [];
   if (mode === 'ongoing') {
+    //진행중인 아이템을 보여준다.
+    //task.isomplete=false
     for (let i = 0; i < taskList.length; i++) {
       if (taskList[i].isComplete == false) {
         filterList.push(taskList[i]);
       }
     }
+    render();
+    console.log('진행중', taskList);
   } else if (mode === 'done') {
+    //끝나는 케이스
+    //task.isComplete=true
     for (let i = 0; i < taskList.length; i++) {
       if (taskList[i].isComplete) {
         filterList.push(taskList[i]);
@@ -114,6 +119,7 @@ function filter(e) {
     }
   }
   render();
+  console.log;
 }
 function randomIDGenerate() {
   return '_' + Math.random().toString(36).substring(2, 9);
