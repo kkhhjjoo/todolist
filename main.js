@@ -101,7 +101,7 @@ function filter(e) {
   filterList = [];
   if (mode === 'ongoing') {
     //진행중인 아이템을 보여준다.
-    //task.isomplete=false
+    //task.isComplete=false
     for (let i = 0; i < taskList.length; i++) {
       if (taskList[i].isComplete == false) {
         filterList.push(taskList[i]);
