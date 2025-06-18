@@ -119,7 +119,7 @@ function filter(e) {
     }
   }
   render();
-  console.log;
+  console.log('종료', taskList);
 }
 function randomIDGenerate() {
   return '_' + Math.random().toString(36).substring(2, 9);
